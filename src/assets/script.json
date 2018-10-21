@@ -1,0 +1,14 @@
+{
+    "script" : [
+        {
+        "type" : "narrator",
+        "character" : "",
+        "message" : "test dialog test dialog"
+        },
+        {
+         "type" : "dialog",
+         "character" : "Daniel",
+         "message" : "test dialog test dialogtest dialog test dialogtest dialogtest dialogtest dialog test dialog test dialog test dialog"
+        }
+    ]
+}

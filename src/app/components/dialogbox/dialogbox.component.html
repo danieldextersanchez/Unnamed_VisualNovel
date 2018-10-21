@@ -1,0 +1,12 @@
+<div id='dialog' class='noselect'>
+  <div id='character'>
+    <div   *ngIf="dialogline.character != '' " [ngClass]="'characterborder'">
+      <label >{{ dialogline.character  }}</label>
+    </div>
+  </div>
+  <div class='well' id='message'>
+      <label >{{ dialogline.message }}</label>
+      <a (click)="next()" id='playicon'><span class="glyphicon glyphicon-play"></span></a>
+  </div>
+</div>
+
