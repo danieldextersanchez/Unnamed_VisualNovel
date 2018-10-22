@@ -9,12 +9,15 @@ import  { ScriptserviceService } from '../../../services/scriptservice.service';
 export class DialogboxComponent implements OnInit {
   dialog : Object
   dialogline : Array<string> = Array()
-  line : number = 0;
   visible : boolean = true;
-  
+  nextbutton : boolean = false;
+  line : number;
   constructor(private script : ScriptserviceService) { }
 
   ngOnInit() {
+    this.script.line.subscribe(data=>{
+      this.line = data;
+    })
     this.script.getscript().then((data)=>{
       this.dialog = data["script"];
       this.dialogline = this.dialog[this.line]
@@ -33,18 +36,22 @@ export class DialogboxComponent implements OnInit {
   }
 
   messageeffect(){
-  
+    this.nextbutton = true;
     let log = this.dialog[this.line];
     var dialog = log["message"];
     log["message"] = "";
     this.dialogline = log;
-    var time = 500;
+    var time = 100;
     for(let i=0;i<dialog.length;i++){
       setTimeout(()=>{ 
         this.dialogline["message"] += dialog[i];
+        if(i==dialog.length-1){
+          this.nextbutton = false;
+        }
        },time)
-       time +=20;   
+       time +=30;   
     }
+    this.script.line.next(this.line);
   }
 }
 

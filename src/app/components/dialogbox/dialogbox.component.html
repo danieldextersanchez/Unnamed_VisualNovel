@@ -6,7 +6,7 @@
   </div>
   <div class='well' id='message'>
       <label >{{ dialogline.message }}</label>
-      <a (click)="next()" id='playicon'><span class="glyphicon glyphicon-play"></span></a>
+      <button (click)="next()" id='playicon' [disabled]="nextbutton" ><span class="glyphicon glyphicon-play"></span></button>
   </div>
 </div>
 

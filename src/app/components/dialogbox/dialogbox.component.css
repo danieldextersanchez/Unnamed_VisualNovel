@@ -27,9 +27,11 @@
   .characterborder{
     border-radius: 20px 20px 0px 0px;
     border: 1px solid black;
+    text-align:center;
+    max-width:200px;
   }
   #message{
-      height:100px
+      height:100px;
   }
 
   

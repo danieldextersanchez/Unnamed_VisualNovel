@@ -1,14 +1,19 @@
 {
     "script" : [
         {
-        "type" : "narrator",
-        "character" : "",
-        "message" : "test dialog test dialog"
+        "type" : "dialog",
+        "character" : "teacher",
+        "message" : "Daniel Dexter"
         },
         {
          "type" : "dialog",
          "character" : "Daniel",
-         "message" : "test dialog test dialogtest dialog test dialogtest dialogtest dialogtest dialog test dialog test dialog test dialog"
-        }
+         "message" : "Baket po?"
+        },
+        {
+            "type" : "dialog",
+            "character" : "teacher",
+            "message" : "Come here"
+           }
     ]
 }
