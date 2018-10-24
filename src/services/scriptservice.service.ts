@@ -7,8 +7,11 @@ import { BehaviorSubject } from 'rxjs';
 export class ScriptserviceService {
   constructor(private http:HttpClient) { }
   line : BehaviorSubject<number> =  new BehaviorSubject(0);
+  background : BehaviorSubject<string> = new BehaviorSubject("")
+
 
   public getscript(load = undefined){
     return this.http.get("../../assets/script.json").toPromise();
   }
+
 }

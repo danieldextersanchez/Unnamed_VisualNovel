@@ -21,7 +21,10 @@ export class DialogboxComponent implements OnInit {
     this.script.getscript().then((data)=>{
       this.dialog = data["script"];
       this.dialogline = this.dialog[this.line]
+      this.changebackground();
     });  
+
+    
     
   }
 
@@ -33,6 +36,7 @@ export class DialogboxComponent implements OnInit {
       this.line = 0;
       this.messageeffect();
     }
+    this.changebackground();
   }
 
   messageeffect(){
@@ -52,6 +56,11 @@ export class DialogboxComponent implements OnInit {
        time +=30;   
     }
     this.script.line.next(this.line);
+  }
+  
+  changebackground(){
+    console.log(this.line)
+    this.script.background.next(this.dialog[this.line].background);
   }
 }
 

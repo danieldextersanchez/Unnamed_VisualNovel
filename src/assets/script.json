@@ -1,19 +1,27 @@
 {
     "script" : [
         {
+            "type" : "narrator",
+            "background" : "rooftop.jpg",
+            "message" : "One day, isang araw"
+        },
+        {
         "type" : "dialog",
         "character" : "teacher",
+        "background" : "rooftop.jpg",
         "message" : "Daniel Dexter"
         },
         {
          "type" : "dialog",
          "character" : "Daniel",
+         "background" : "blank.jpg",
          "message" : "Baket po?"
         },
         {
             "type" : "dialog",
             "character" : "teacher",
+            "background" : "rooftop.jpg",
             "message" : "Come here"
-           }
+        }
     ]
 }
