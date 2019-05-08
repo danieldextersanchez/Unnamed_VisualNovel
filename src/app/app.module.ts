@@ -5,12 +5,14 @@ import { ScriptserviceService } from '../services/scriptservice.service';
 import { AppComponent } from './app.component';
 import { DialogboxComponent } from './components/dialogbox/dialogbox.component';
 import { BackgroundComponent } from './components/background/background.component';
+import { CharactersComponent } from './components/characters/characters.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DialogboxComponent,
-    BackgroundComponent
+    BackgroundComponent,
+    CharactersComponent
   ],
   imports: [
     BrowserModule,

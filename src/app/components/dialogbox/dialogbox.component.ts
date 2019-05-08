@@ -13,7 +13,7 @@ export class DialogboxComponent implements OnInit {
   nextbutton : boolean = false;
   line : number;
   constructor(private script : ScriptserviceService) { }
-
+  
   ngOnInit() {
     this.script.line.subscribe(data=>{
       this.line = data;
@@ -21,10 +21,8 @@ export class DialogboxComponent implements OnInit {
     this.script.getscript().then((data)=>{
       this.dialog = data["script"];
       this.dialogline = this.dialog[this.line]
-      this.changebackground();
-    });  
-
-    
+      this.changescreen();
+    });   
     
   }
 
@@ -36,7 +34,7 @@ export class DialogboxComponent implements OnInit {
       this.line = 0;
       this.messageeffect();
     }
-    this.changebackground();
+    this.changescreen();
   }
 
   messageeffect(){
@@ -58,9 +56,9 @@ export class DialogboxComponent implements OnInit {
     this.script.line.next(this.line);
   }
   
-  changebackground(){
-    console.log(this.line)
+  changescreen(){
     this.script.background.next(this.dialog[this.line].background);
+    this.script.characters.next(this.dialog[this.line].characters);
   }
 }
 

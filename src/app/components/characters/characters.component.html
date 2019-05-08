@@ -1,0 +1,13 @@
+<div *ngIf='characters'>
+  <div *ngFor='let character of characters'>
+    <div *ngIf="character.position == 'center' " style='margin-left:auto;margin-right:auto;text-align: center;'>
+        <img src='../../../assets/characters/{{ character.image  }}'>
+    </div>
+    <div *ngIf="character.position == 'left'" style='float:left' >
+      <img src='../../../assets/characters/{{ character.image  }}'>
+    </div>
+    <div *ngIf="character.position == 'right' " style='float:right'>
+        <img src='../../../assets/characters/{{ character.image  }}'>
+    </div>
+  </div>
+</div>

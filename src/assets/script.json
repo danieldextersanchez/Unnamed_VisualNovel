@@ -1,27 +1,68 @@
 {
-    "script" : [
+    "script" : 
+    [
         {
             "type" : "narrator",
             "background" : "rooftop.jpg",
-            "message" : "One day, isang araw"
+            "message" : "?"
         },
         {
         "type" : "dialog",
         "character" : "teacher",
         "background" : "rooftop.jpg",
-        "message" : "Daniel Dexter"
+        "message" : "??",
+        "characters" : [{
+            "image" : "teacher.png",
+            "position" :"left"
+        }]
         },
         {
          "type" : "dialog",
          "character" : "Daniel",
-         "background" : "blank.jpg",
-         "message" : "Baket po?"
+         "background" : "rooftop.jpg",
+         "message" : "???",
+         "characters" : [
+             {
+                 "image" : "daniel.png",
+                 "position" : "right"
+             },
+             {
+                 "image" : "teacher.png",
+                 "position" : "left"
+             }
+         ]
         },
         {
             "type" : "dialog",
             "character" : "teacher",
             "background" : "rooftop.jpg",
-            "message" : "Come here"
+            "message" : "????",
+            "characters" : [
+                {
+                    "image" : "others.png",
+                    "position" : "center"
+                }
+            ]
+        },
+        {
+            "type" : "dialog",
+            "character" : "teacher",
+            "background" : "rooftop.jpg",
+            "message" : "????",
+            "characters" : [
+                {
+                    "image" : "others.png",
+                    "position" : "center"
+                },
+                {
+                    "image" : "daniel.png",
+                    "position" : "right"
+                },
+                {
+                    "image" : "teacher.png",
+                    "position" : "left"
+                }
+            ]
         }
     ]
 }
