@@ -35,7 +35,7 @@
         {
             "type" : "dialog",
             "character" : "teacher",
-            "background" : "rooftop.jpg",
+            "background" : "blank.jpg",
             "message" : "????",
             "characters" : [
                 {
@@ -62,6 +62,15 @@
                     "image" : "teacher.png",
                     "position" : "left"
                 }
+            ]
+        },
+        {
+            "type" : "choice",
+            "background" : "rooftop.jpg",
+            "message" : "????",
+            "choices" : [
+                "Yes",
+                "No"
             ]
         }
     ]

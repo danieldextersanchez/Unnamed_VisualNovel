@@ -18,14 +18,17 @@ export class DialogboxComponent implements OnInit {
     this.script.line.subscribe(data=>{
       this.line = data;
     })
+    this.getscript();
+  }
+  
+  getscript(){
     this.script.getscript().then((data)=>{
-      this.dialog = data["script"];
+      this.dialog = data['script'];
       this.dialogline = this.dialog[this.line]
       this.changescreen();
-    });   
-    
+    });  
   }
-
+  
   next(){
     this.line++;
     if(this.line in this.dialog){
@@ -57,8 +60,14 @@ export class DialogboxComponent implements OnInit {
   }
   
   changescreen(){
-    this.script.background.next(this.dialog[this.line].background);
-    this.script.characters.next(this.dialog[this.line].characters);
+    var characters = this.script.characters.getValue();
+    var background = this.script.background.getValue();
+    if(background != this.dialog[this.line].background){
+      this.script.background.next(this.dialog[this.line].background);
+    }
+    if(characters != this.dialog[this.line].characters){
+      this.script.characters.next(this.dialog[this.line].characters);
+    }
   }
 }
 

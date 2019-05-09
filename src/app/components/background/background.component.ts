@@ -10,12 +10,9 @@ export class BackgroundComponent implements OnInit {
   constructor(private script : ScriptserviceService) { }
   background_image : string = "rooftop.jpg";
   ngOnInit() {
-      this.script.line.subscribe((data)=>{
-        this.background_image = this.script.background[data];
         this.script.background.subscribe(data=>{
           this.background_image = data;
         });
-      })
   }
 
 

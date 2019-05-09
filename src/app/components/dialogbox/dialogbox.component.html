@@ -1,10 +1,18 @@
-<div id='dialog' class='noselect'>
+<div id='dialog' class='noselect' *ngIf="dialogline.type == 'dialog' || dialogline.type == 'narrator' ">
     <div [ngClass]="{ 'well characterborder' : dialogline.character    }" style='display:inline'>
       <label style='display:inline' >{{ dialogline.character  }}<span style='visibility:hidden'>a</span>  </label>
     </div>
-  <div class='well' id='message'>
+  <div class='well message'>
       <label >{{ dialogline.message }}</label>
       <button (click)="next()" id='playicon' [disabled]="nextbutton" ><span class="glyphicon glyphicon-play"></span></button>
   </div>
+</div>
+
+<div id='choice' class='noselect well' *ngIf="dialogline.type == 'choice'  ">
+    <div *ngFor='let line of dialogline.choices'>
+      <div class='center'>
+          <button >{{line}}</button>
+      </div>
+    </div>
 </div>
 

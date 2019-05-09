@@ -11,12 +11,8 @@ export class CharactersComponent implements OnInit {
   constructor(private script : ScriptserviceService) { }
   characters : any[];
   ngOnInit() {
-    this.script.line.subscribe((data)=>{
       this.script.characters.subscribe(data=>{
         this.characters = data;
       })
-    })
   }
-  
-
 }

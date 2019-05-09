@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { DialogboxComponent } from './components/dialogbox/dialogbox.component';
 import { BackgroundComponent } from './components/background/background.component';
 import { CharactersComponent } from './components/characters/characters.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CharactersComponent } from './components/characters/characters.componen
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [ScriptserviceService],
   bootstrap: [AppComponent]
