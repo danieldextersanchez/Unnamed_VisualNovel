@@ -12,6 +12,7 @@ export class DialogboxComponent implements OnInit {
   visible : boolean = true;
   nextbutton : boolean = false;
   line : number;
+  currentroute : string;
   constructor(private script : ScriptserviceService) { }
   
   ngOnInit() {
@@ -21,28 +22,50 @@ export class DialogboxComponent implements OnInit {
     this.getscript();
   }
   
-  getscript(){
-    this.script.getscript().then((data)=>{
+  getscript(route=""){
+    this.script.getscript(route).then((data)=>{
       this.dialog = data['script'];
       this.dialogline = this.dialog[this.line]
       this.changescreen();
     });  
   }
   
-  next(){
+  next(route){
     this.line++;
     if(this.line in this.dialog){
-      this.messageeffect();
+      this.showline(route);
     }else{
       this.line = 0;
-      this.messageeffect();
+      this.showline();
     }
     this.changescreen();
   }
 
-  messageeffect(){
-    this.nextbutton = true;
-    let log = this.dialog[this.line];
+  showline(searchroute = undefined){
+    let log;
+    if(this.dialog[this.line].type == 'routechange'){
+      var temp = this.line;
+      this.line = 0;
+      var route = this.dialog[temp].route[this.currentroute];
+      if(route == 'continue'){
+        this.line++;
+      }else{
+        this.getscript(route);
+      }
+    }
+    if(searchroute != undefined){
+      this.currentroute = searchroute;
+      while(this.dialog[this.line].route != searchroute){
+        this.line++;
+      }
+      log = this.dialog[this.line];
+      if(log.skip > 0 && log.skip != undefined){
+        this.line += log.skip;
+      }    
+    }else{
+      log = this.dialog[this.line];
+    }
+    
     var dialog = log["message"];
     log["message"] = "";
     this.dialogline = log;
@@ -71,3 +94,4 @@ export class DialogboxComponent implements OnInit {
   }
 }
 
+ 

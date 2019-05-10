@@ -9,9 +9,10 @@
 </div>
 
 <div id='choice' class='noselect well' *ngIf="dialogline.type == 'choice'  ">
+  <h4 style='text-align:center;margin-left:auto;margin-right:auto'>{{ dialogline.message }}</h4>
     <div *ngFor='let line of dialogline.choices'>
       <div class='center'>
-          <button >{{line}}</button>
+          <button type="button" value='{{line.route}}' (click)='next(line.route)' class="btn btn-primary btn-block">{{line.message}}</button><br><br>
       </div>
     </div>
 </div>

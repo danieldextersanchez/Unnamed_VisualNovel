@@ -9,7 +9,13 @@ export class ScriptserviceService {
   line : BehaviorSubject<number> =  new BehaviorSubject(0);
   background : BehaviorSubject<string> = new BehaviorSubject("rooftop.jpg");
   characters : BehaviorSubject<any[]> = new BehaviorSubject([]);
-  public getscript(){
-    return  this.http.get("../../assets/script.json").toPromise();
+  public getscript(route=""){
+    var url;
+    if(route != ""){
+      url = "../../assets/scripts/"+route+".json"
+    }else{
+      url = "../../assets/scripts/script.json";
+    }
+    return  this.http.get(url).toPromise();
   }
 }
