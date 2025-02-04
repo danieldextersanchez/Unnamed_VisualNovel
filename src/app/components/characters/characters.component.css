@@ -12,11 +12,17 @@
 }
 #characters{
     margin-top:25%;
+    background-color: transparent;
     z-index: -1000;
 }
 img{
     z-index:-100;
+    mix-blend-mode: multiply;
+    background-color: transparent;
 }
 div{
     z-index:-1;
+}
+.chars{
+    background-color: transparent;
 }

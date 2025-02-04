@@ -1,15 +1,15 @@
-<div *ngIf='characters' id='characters'>
+<div *ngIf='characters' id='characters' class="chars">
   <div *ngFor='let character of characters' >
     <div *ngIf="character.position == 'left'" id='left'>
       <img src='../../../assets/characters/{{ character.image  }}'>
     </div>
   </div>
-  <div *ngFor='let character of characters' >
+  <div *ngFor='let character of characters' class="chars">
       <div *ngIf="character.position == 'right' "  id='right'>
           <img src='../../../assets/characters/{{ character.image  }}'>
       </div>
   </div>
-  <div *ngFor='let character of characters' >
+  <div *ngFor='let character of characters' class="chars">
     <div *ngIf="character.position == 'center' " id='center'>
       <img src='../../../assets/characters/{{ character.image  }}'>
     </div>   
